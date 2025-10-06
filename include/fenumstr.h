@@ -5,7 +5,7 @@ namespace fenumstr
 {
     template <auto V>
     std::string EnumToString() {
-#if defined(__clang__)
+#if defined(__clang__) || defined(__GNUC__)
         std::string_view s = __PRETTY_FUNCTION__;
         auto pos = s.find("V = ") + 4;
         auto end = s.find(']', pos);
